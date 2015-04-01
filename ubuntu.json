@@ -1,0 +1,31 @@
+{
+  "variables": {
+    "aws_secret_key": "",
+    "instance_type": "",
+    "aws_access_key": "",
+    "aws_region": "",
+    "aws_image_id": ""
+  },
+  "provisioners": [
+    {
+      "inline": [
+        "sleep 30",
+        "sudo apt-get update",
+        "sudo apt-get dist-upgrade --option=Dpkg::Options::=--force-confold --option=Dpkg::options::=--force-unsafe-io --assume-yes"
+      ],
+      "type": "shell"
+    }
+  ],
+  "builders": [
+    {
+      "access_key": "{{user `aws_access_key`}}",
+      "instance_type": "{{user `instance_type`}}",
+      "source_ami": "{{user `aws_image_id`}}",
+      "ssh_username": "ubuntu",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "ami_name": "trusty-{{timestamp}}",
+      "type": "amazon-ebs",
+      "region": "{{user `aws_region`}}"
+    }
+  ]
+}
