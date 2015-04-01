@@ -23,7 +23,7 @@
       "source_ami": "{{user `aws_image_id`}}",
       "ssh_username": "ubuntu",
       "secret_key": "{{user `aws_secret_key`}}",
-      "ami_name": "trusty-{{timestamp}}",
+      "ami_name": "ubuntu-{{timestamp}}",
       "type": "amazon-ebs",
       "region": "{{user `aws_region`}}"
     }
