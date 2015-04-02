@@ -17,7 +17,7 @@ def get_config():
     prompts = [
        ('aws_access_key', prompt("Enter your AWS access key: [%s] ", access_key)),
        ('aws_secret_key', prompt("Enter your AWS secret key: [%s] ", secret_key)),
-       ('aws_image_id'  , prompt("Enter the source AMI: [%s] ", "ami-290fee6d")),
+       ('aws_image_id'  , prompt("Enter the source AMI: [%s] ", "ami-5c120b19")),
        ('aws_region'    , prompt("Enter the AWS region you wish to use: [%s] ", "us-west-1")),
        ('instance_type' , prompt("Enter the instane type: [%s] ", "t2.small"))
     ]
