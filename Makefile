@@ -8,3 +8,6 @@ build:
 
 check:
 	packer inspect ubuntu.json
+
+debug:
+	packer build --debug -var-file=./variables.json ubuntu.json
